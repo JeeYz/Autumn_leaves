@@ -9,6 +9,7 @@ This is cool language.
 
 
 # link example
+> [google](https://google.com)
 > ## [google page](https://google.com){: target="_blank"}</br>
 > ### [google page](https://google.com)[newtab]</br>
 > # <a href="https://google.com/" target="_blank">google</a>
