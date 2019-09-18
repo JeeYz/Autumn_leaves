@@ -9,6 +9,9 @@ This is cool language.
 
 
 # link example
-> ## [google page](https://google.com){:target="_blank"}</br>
+> ## [google page](https://google.com){: target="_blank"}</br>
 > ### [google page](https://google.com)[newtab]</br>
-> # <a href="http://example.com/" target="_blank">Hello, world!</a>
+> # <a href="https://google.com/" target="_blank">google</a>
+> [google](https://google.com "title" target="_blank")</br>
+> [google](https://google.com" target="_blank)</br>
+> [google](https://google.com){:hreflang="de"}
