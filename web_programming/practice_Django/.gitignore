@@ -1,1 +1,5 @@
 db.sqlite3
+./practice_Django/asgi.py
+./practice_Django/wsgi.py
+./practice_Django/urls.py
+./practice_Django/settings.py
