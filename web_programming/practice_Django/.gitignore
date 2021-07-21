@@ -9,3 +9,5 @@ settings.py
 
 migrations/
 
+_media/
+media/
