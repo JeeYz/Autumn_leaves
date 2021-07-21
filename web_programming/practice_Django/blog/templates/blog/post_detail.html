@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 <html lang="ko">
     <head>
         <meta charset="utf-8" />
@@ -10,8 +10,8 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-		<link href="{%static 'blog/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
-		<link href="{% static 'blog/css/blog-post.css' %}" rel="stylesheet">
+		<link href="{% static 'blog/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+		<link href="{% static 'blog/css/blog-post.css' %}" rel="stylesheet" />
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -50,7 +50,11 @@
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
                         </header>
                         <!-- Preview image figure-->
+						{% if post.head_image %}
 						<figure class="mb-4"><img class="img-fluid rounded" src="{{ post.head_image.url }}" alt="{{ post.title }}" /></figure>
+						{% else %}
+						<a href="#!"><img class="card-img-top" src="https://picsum.photos/seed/{{ post.id }}/700/300" alt="{{ post.title }}" /></a>
+						{% endif %}
                         <!-- Post content-->
                         <section class="mb-5">
 							<p>{{ post.content }}</p>
