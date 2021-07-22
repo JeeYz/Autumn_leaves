@@ -3,16 +3,17 @@
 {% block main_area %}
 <h1>Blog</h1>
 <h2>개발자 입니다.</h2>
-
+<hr/>
+<br>
 {% if post_list.exists %}
 
 	{% for p in post_list %}
 	<!-- Blog post-->
 	<div class="card mb-4">
 		{% if p.head_image %}
-		<a href="#!"><img class="card-img-top" src="{{ p.head_image.url }}" alt="{{ p.title }}" /></a>
+			<a href="#!"><img class="card-img-top" src="{{ p.head_image.url }}" alt="{{ p.title }}" /></a>
 		{% else %}
-		<a href="#!"><img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/700/300" alt="{{ p.title }}" /></a>
+			<a href="#!"><img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/700/300" alt="{{ p.title }}" /></a>
 		{% endif %}
 	    <div class="card-body">
 			<div class="small text-muted">January 1, 2021</div>
@@ -40,5 +41,4 @@
 			<a class="page-link" href="">Newer&larr;</a>
 		</li>
 	</ul>
-</div>
 {% endblock %}
