@@ -12,6 +12,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
 		<link href="{% static 'blog/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
 		<link href="{% static 'blog/css/blog-post.css' %}" rel="stylesheet" />
+		<script src="https://kit.fontawesome.com/8b84e6580a.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -58,6 +59,17 @@
                         <!-- Post content-->
                         <section class="mb-5">
 							<p>{{ post.content }}</p>
+							{% if post.file_upload %}
+							<a href="{{ post.file_upload.url }}" type="button" class="btn btn-outline-dark" role="button" Download>
+								Download: 
+								{% if post.get_file_ext == 'jpg' or post.get_file_ext == 'jpeg' %}
+									<i class="far fa-file-image"></i>
+								{% else %}
+									<i class="fas fa-file-alt"></i>
+								{% endif %}
+								{{ post.get_file_name }}
+							</a>
+							{% endif %}
                         </section>
 
                     </article>
