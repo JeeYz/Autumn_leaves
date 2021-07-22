@@ -84,35 +84,38 @@
 
 	<div class="container">
 		<div class="row my-3">
-			<div class="col-md-8 col-lg-9">
+			<div class="col-md-8 col-lg-9", id='main-area'>
 				<h1>Blog</h1>
 				<h2>개발자 입니다.</h2>
 
+				{% if post_list.exists %}
 
-
-				{% for p in post_list %}
-				<!-- Blog post-->
-                <div class="card mb-4">
-					{% if p.head_image %}
-					<a href="#!"><img class="card-img-top" src="{{ p.head_image.url }}" alt="{{ p.title }}" /></a>
-					{% else %}
-					<a href="#!"><img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/700/300" alt="{{ p.title }}" /></a>
-					{% endif %}
-				    <div class="card-body">
-						<div class="small text-muted">January 1, 2021</div>
-						<h2 class="card-title h4">{{p.title}}</h2>
-						{% if p.hook_text %}
-							<h5 class="text-muted">{{ p.hook_text }}</h5>
+					{% for p in post_list %}
+					<!-- Blog post-->
+                	<div class="card mb-4">
+						{% if p.head_image %}
+						<a href="#!"><img class="card-img-top" src="{{ p.head_image.url }}" alt="{{ p.title }}" /></a>
+						{% else %}
+						<a href="#!"><img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/700/300" alt="{{ p.title }}" /></a>
 						{% endif %}
-						<p class="card-text">{{ p.content | truncatewords:45 }}</p>
-						<a href="{{ p.get_absolute_url }}" class="btn btn-primary" href="#!">Read more →</a>
+					    <div class="card-body">
+							<div class="small text-muted">January 1, 2021</div>
+							<h2 class="card-title h4">{{p.title}}</h2>
+							{% if p.hook_text %}
+								<h5 class="text-muted">{{ p.hook_text }}</h5>
+							{% endif %}
+							<p class="card-text">{{ p.content | truncatewords:45 }}</p>
+							<a href="{{ p.get_absolute_url }}" class="btn btn-primary" href="#!">Read more →</a>
+						</div>
+						<div class="card-footer text-muted">
+							Posted on {{ p.created_at }}
+							<a href="#">작성자는 쓸 예정</a>
+						</div>
 					</div>
-					<div class="card-footer text-muted">
-						Posted on {{ p.created_at }}
-						<a href="#">작성자는 쓸 예정</a>
-					</div>
-				</div>
-				{% endfor %}
+					{% endfor %}
+				{% else %}
+					<h1>아직 게시물이 없습니다.</h1>
+				{% endif %}
 					<!-- Pagination -->
 					<ul class="pagination justify-content-center mb-4">
 						<li class="page-item">
