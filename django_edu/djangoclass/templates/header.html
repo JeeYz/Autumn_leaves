@@ -1,4 +1,3 @@
-
 <div class="default_header">
 
     <div>
@@ -17,6 +16,9 @@
 
         {% else %}
 
+        <a href="{% url 'accountapp:detail' pk=user.pk %}">
+            <span>MyPage</span>
+        </a>
         <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
             <span>logout</span>
         </a>
